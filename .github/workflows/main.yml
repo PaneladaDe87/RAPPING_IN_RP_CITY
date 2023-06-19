@@ -15,10 +15,11 @@ jobs:
     - name: Set up Haxe
       uses: krdlab/setup-haxe@v1
     
-    - name: Install lime and flixel
+    - name: Install all dependencies
       run: |
         haxelib install lime
         haxelib install flixel
+        haxelib install openfl
         
     - name: Build game
       run: haxelib run lime build android
