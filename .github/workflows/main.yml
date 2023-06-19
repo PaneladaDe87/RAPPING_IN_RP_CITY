@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Haxe
+      uses: krdlab/setup-haxe@v1
+
+    - name: Build game
+      run: haxelib run lime build android
+
+    - name: Run tests
+      run: haxelib run lime test android
+      
+    - name: Upload game artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Game
+        path: .
