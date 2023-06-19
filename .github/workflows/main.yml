@@ -1,4 +1,4 @@
-name: CI lol
+name: CI lmao
 
 on:
   push:
@@ -21,6 +21,17 @@ jobs:
         haxelib install lime
         haxelib install flixel
         haxelib install openfl
+        
+    - name: Install Android SDK
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y openjdk-8-jdk
+        wget -q https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip -O android-sdk.zip
+        unzip -q android-sdk.zip -d android-sdk
+        export ANDROID_SDK_ROOT=$PWD/android-sdk
+        export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+        yes | sdkmanager --licenses
+        sdkmanager "build-tools;30.0.3" "platforms;android-30"
         
     - name: Setup lime and build game
       run: |
