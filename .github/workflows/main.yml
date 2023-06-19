@@ -18,7 +18,7 @@ jobs:
     
     - name: Install all dependencies
       run: |
-        haxelib install lime 8.0.2
+        haxelib install lime
         haxelib install flixel
         haxelib install openfl
         
