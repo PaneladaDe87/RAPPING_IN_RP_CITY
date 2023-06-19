@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-    <meta title="Meu Jogo de Ritmo" version="1.0.0" />
+    <meta title="Rapping in Roleplay City" version="1.0.0" />
     <app main="Main" file="Main" />
     <window width="800" height="600" />
     
@@ -9,4 +9,6 @@
   
     <source path="src" />
     <assets path="assets" rename="assets" exclude="**/*.hx" />
+
+    <config:android build-tools-version="" />
 </project>
