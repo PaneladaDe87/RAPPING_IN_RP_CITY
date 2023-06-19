@@ -24,7 +24,7 @@ jobs:
         
     - name: Setup lime and build game
       run: |
-        lime setup android
+        lime config android
         lime build android
 
     - name: Run tests
