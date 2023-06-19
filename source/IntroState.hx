@@ -15,7 +15,7 @@ public class IntroState extends FlxState {
             IntroEnded = true;
         }
 
-        if(IntroEnded = true) {
+        if(IntroEnded == true) {
             FlxG.switchState(new MenuState());
         }
     }
