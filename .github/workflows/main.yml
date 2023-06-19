@@ -24,7 +24,7 @@ jobs:
         
     - name: Setup lime and build game
       run: |
-        lime setup android -y
+        haxelib run lime setup android -y
         haxelib run lime build android
 
     - name: Run tests
