@@ -21,11 +21,10 @@ jobs:
         haxelib install flixel
         haxelib install openfl
         
-    - name: Setup hehehehaw
-      run: lime setup android
-        
-    - name: Build game
-      run: haxelib run lime build android
+    - name: Setup lime and build game
+      run: |
+        lime setup android
+        haxelib run lime build android
 
     - name: Run tests
       run: haxelib run lime test android
