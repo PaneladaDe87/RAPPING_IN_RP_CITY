@@ -11,7 +11,7 @@ public class IntroState extends FlxState {
     }
     
     override function update(elapsed:Float):Void {
-        if(FlxG.keys.space()) {
+        if(FlxG.keys.justPressed("SPACE")) {
             IntroEnded = true;
         }
 
