@@ -30,7 +30,6 @@ jobs:
         unzip -q android-sdk.zip -d android-sdk
         export ANDROID_SDK_ROOT=$PWD/android-sdk
         export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
-        yes | sdkmanager --licenses
         sdkmanager "build-tools;30.0.3" "platforms;android-30"
         
     - name: Setup lime and build game
