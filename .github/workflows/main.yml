@@ -22,17 +22,9 @@ jobs:
         haxelib install flixel
         haxelib install openfl
         
-    - name: Install Android SDK
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y openjdk-8-jdk
-        wget -q https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip -O android-sdk.zip
-        unzip -q android-sdk.zip -d android-sdk
-        export ANDROID_SDK_ROOT=$PWD/android-sdk
-        export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
-        
     - name: Setup lime and build game
       run: |
+        lime setup
         lime config android
         lime build android
 
