@@ -15,17 +15,12 @@ jobs:
       
     - name: Set up Haxe
       uses: krdlab/setup-haxe@v1
-    
-    - name: Install some dependencies
+      
+    - name: Setup everyshit and build game
       run: |
-        haxelib install flixel
-        haxelib install openfl
-        
-    - name: Setup Haxelib...
-      run: echo "y" | haxelib setup -e
-        
-    - name: Setup lime and build game
-      run: |
+        echo "y" | haxelib setup -e
+        echo "y" | haxelib install flixel
+        echo "y" | haxelib install openfl
         echo "y" | haxelib install lime
         haxelib run lime setup
         haxelib run lime build android
