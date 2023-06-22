@@ -23,6 +23,7 @@ jobs:
         echo "y" | haxelib install openfl
         echo "y" | haxelib install lime
         haxelib run lime setup
+        haxelib run lime setup android
         haxelib run lime build android
 
     - name: Run tests
