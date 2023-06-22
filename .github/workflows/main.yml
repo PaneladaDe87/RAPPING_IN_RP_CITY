@@ -23,7 +23,7 @@ jobs:
         haxelib install openfl
         
     - name: Setup Haxelib...
-      run: haxelib setup
+      run: echo "y" | haxelib setup -e
         
     - name: Setup lime and build game
       run: |
