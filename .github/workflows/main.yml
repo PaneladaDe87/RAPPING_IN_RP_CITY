@@ -16,15 +16,17 @@ jobs:
     - name: Set up Haxe
       uses: krdlab/setup-haxe@v1
       
+    - name: Install dependencies
+      run: |
+        echo "{}" > haxelib.json
+        haxelib install --always haxelib.json
+      working-directory: .
+      
     - name: Setup everyshit and build game
       run: |
-        echo "y" | haxelib setup -e
-        echo "y" | haxelib install flixel
-        echo "y" | haxelib install openfl
-        echo "y" | haxelib install lime
         haxelib run lime setup
         haxelib run lime setup android
-        haxelib run lime build android
+        haxelib run lime build android -debug
 
     - name: Run tests
       run: haxelib run lime test android
@@ -33,4 +35,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Game
-        path: .
+        path: ./debug.apk
