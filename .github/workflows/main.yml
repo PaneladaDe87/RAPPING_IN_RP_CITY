@@ -20,6 +20,7 @@ jobs:
       run: |
         haxelib install lime
         haxelib install flixel
+        haxelib install openfl
       
     - name: Setup everyshit and build game
       run: |
