@@ -19,6 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         haxelib install lime
+        haxelib install flixel
       
     - name: Setup everyshit and build game
       run: |
