@@ -18,9 +18,7 @@ jobs:
       
     - name: Install dependencies
       run: |
-        echo "{}" > haxelib.json
-        haxelib install --always haxelib.json
-      working-directory: .
+        haxelib install lime
       
     - name: Setup everyshit and build game
       run: |
