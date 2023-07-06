@@ -6,6 +6,7 @@
     
     <haxelib name="flixel" />
     <haxelib name="openfl" />
+    <haxelib name="lime" />
   
     <source path="src" />
     <assets path="assets" rename="assets" exclude="**/*.hx" />
