@@ -24,8 +24,8 @@ jobs:
       
     - name: Setup everyshit and build game
       run: |
-        lime setup
-        lime setup android
+        haxelib run lime setup
+        haxelib run lime setup android
         lime build android -debug
 
     - name: Run tests
