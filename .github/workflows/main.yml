@@ -25,8 +25,8 @@ jobs:
     - name: Setup everyshit and build game
       run: |
         haxelib run lime setup
-        lime setup android
-        echo "y" || lime build android
+        echo "y" || lime setup android
+        lime build android
 
     - name: Run tests
       run: haxelib run lime test android
