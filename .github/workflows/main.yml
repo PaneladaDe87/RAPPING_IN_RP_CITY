@@ -27,6 +27,7 @@ jobs:
         haxelib run lime setup
         echo "y" || lime setup ANDROID_SETUP true
         echo "y" || lime build android
+        echo "y" || lime test android
         
     - name: Upload game artifacts
       uses: actions/upload-artifact@v2
