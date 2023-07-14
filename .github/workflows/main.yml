@@ -26,7 +26,7 @@ jobs:
       run: |
         haxelib run lime setup
         lime setup android
-        lime build android
+        echo "y" || lime build android
 
     - name: Run tests
       run: haxelib run lime test android
