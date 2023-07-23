@@ -24,9 +24,8 @@ jobs:
       
     - name: Setup everyshit and build game
       run: |
-        haxelib run lime setup
         echo "y" || lime setup ANDROID_SETUP true
-        echo "y" || lime build Project.xml android --app-version="4.0.0-${{ github.run_id}}"
+        echo "y" || lime build android --app-version="4.0.0-${{ github.run_id}}"
         echo "y" || lime test android
         
     - name: Upload game artifacts
