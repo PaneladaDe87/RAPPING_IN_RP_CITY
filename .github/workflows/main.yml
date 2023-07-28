@@ -25,12 +25,12 @@ jobs:
     - name: Setup everyshit
       run: |
         haxelib run lime setup
-        echo "y" || lime config ANDROID_SETUP true
+        echo "y" | lime config ANDROID_SETUP true
         
     - name: Build and test shits
       run: |
-        echo "y" || lime build android --app-version="4.0.0-${{ github.run_id}}"
-        echo "y" || lime test android
+        echo "y" | lime build android --app-version="4.0.0-${{ github.run_id}}"
+        lime test android
         
     - name: Upload game artifacts
       uses: actions/upload-artifact@v2
