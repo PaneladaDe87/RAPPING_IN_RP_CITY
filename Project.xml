@@ -10,7 +10,5 @@
     <haxelib name="lime" />
   
     <source path="source" />
-    <assets path="assets" rename="assets" />
-
-    <config:android build-tools-version="" />
+    <assets path="assets" />
 </project>
