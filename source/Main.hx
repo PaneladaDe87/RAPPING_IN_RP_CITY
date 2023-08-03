@@ -6,9 +6,10 @@ import openfl.Assets;
 public class Main extends FlxG {
     public static var DrawFrameRate:Bool;
     public static var FrameRate:Int;
+    public static var Camera:FlxCamera;
     
     public function New():Void {
-        FramesRate = 60;
+        FrameRate = 60;
         DrawFrameRate = true;
         
         FlxG.updateFramerate(FrameRate);

@@ -50,6 +50,9 @@ public class IntroState extends FlxState {
                             
                         case 8:
                             AddMoreText("This is a copy of FNF'");
+                            
+                        case 9:
+                            IntroEnded = false;
                     }
                 }
             }
