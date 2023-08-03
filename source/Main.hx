@@ -5,13 +5,13 @@ import openfl.Assets;
 
 public class Main extends FlxG {
     public static var DrawFrameRate:Bool;
-    public static var FramesRate:Int;
+    public static var FrameRate:Int;
     
     public function New():Void {
         FramesRate = 60;
         DrawFrameRate = true;
         
-        FlxG.updateFramerate(FramesRate)
+        FlxG.updateFramerate(FrameRate);
     }
     
     public function Start():Void {
