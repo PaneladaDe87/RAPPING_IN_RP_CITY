@@ -1,55 +1,54 @@
 package;
 
-import flixel.FlxG;
+import flixel.FlxGame;
 import flixel.FlxState;
 
 public class IntroState extends FlxState {
     private var IntroEnded:Bool;
-    private var CoolText:String;
+    private var CoolText:String = "CoolText";
     
-    private function New():Void {
+    private function new():Void {
         trace(CoolText);
-        Create();
     }
     
-    public function Create():Void {
+    public function create():Void {
         Update();
     }
     
-    public function Update(elapsed:Float):Void {
-        if(FlxG.keys.justPressed.SPACE) {
+    public function update(elapsed:Float):Void {
+        if(FlxGame.keys.justPressed.SPACE) {
             IntroEnded = true;
         }
         
         if(IntroEnded) {
-            FlxG.switchState(new MenuState());
+            FlxGame.switchState(new MenuState());
         } else {
             if(CurBeat > LastBeat) {
                 for(I in LastBeat...CurBeat) {
                     switch(I + 1) {
                         case 1:
-                            CreateText("just me from ImatureSquad");
+                            createText("just me from ImatureSquad");
                             
                         case 2:
-                            AddMoreText("presents...");
+                            addMoreText("presents...");
                             
                         case 3:
-                            DeleteText();
+                            deleteText();
                             
                         case 4:
-                            CreateText(["Rapping", "In", "RP", "City"]);
+                            createText(["Rapping", "In", "RP", "City"]);
                             
                         case 5:
-                            DeleteText();
+                            deleteText();
                             
                         case 6:
-                            CreateText("Penis");
+                            createText("Penis");
                             
                         case 7:
-                            AddMoreText("LOL");
+                            addMoreText("LOL");
                             
                         case 8:
-                            AddMoreText("This is a copy of FNF'");
+                            addMoreText("This is a copy of FNF'");
                             
                         case 9:
                             IntroEnded = false;
@@ -59,15 +58,15 @@ public class IntroState extends FlxState {
         }
     }
     
-    public function CreateText(Text:String):Void {
+    public function createText(Text:String):Void {
         
     }
     
-    public function DeleteText():Void {
+    public function deleteText():Void {
         
     }
     
-    public function AddMoreText(Text:String):Void {
+    public function addMoreText(Text:String):Void {
         
     }
 }

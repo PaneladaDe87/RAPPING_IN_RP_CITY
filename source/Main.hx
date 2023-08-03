@@ -1,21 +1,20 @@
 package;
 
-import flixel.FlxG;
+import flixel.FlxGame;
 import openfl.Assets;
 
-public class Main extends FlxG {
+public class Main extends FlxGame {
     public static var DrawFrameRate:Bool;
     public static var FrameRate:Int;
-    public static var Camera:FlxCamera;
     
-    public function New():Void {
+    public function new():Void {
         FrameRate = 60;
         DrawFrameRate = true;
         
-        FlxG.updateFramerate(FrameRate);
+        FlxGame.updateFramerate(FrameRate);
     }
     
-    public function Start():Void {
-        FlxG.switchState(new IntroState());
+    public function start():Void {
+        FlxGame.switchState(new IntroState());
     }
 }
