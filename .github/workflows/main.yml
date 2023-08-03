@@ -28,7 +28,7 @@ jobs:
       run: |
         haxelib run lime setup
         lime config ANDROID_SETUP true
-        lime build android --app-version="4.0.0-${{ github.run_id }}"
+        echo "y" || lime build android --app-version="4.0.0-${{ github.run_id }}"
         lime test android
         
     - name: Upload game artifacts
