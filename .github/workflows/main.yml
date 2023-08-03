@@ -22,12 +22,14 @@ jobs:
         haxelib install flixel
         haxelib install openfl
       
-    - name: Setup everyshit and build game
+    - name: Setup and build this shitty game
+      # lime, im trying to build my shitty game and you ignoring some lines?
+      # can someone explain?
       run: |
-        haxelib run lime setup
-        echo "y" || lime config ANDROID_SETUP true
-        echo "y" || lime build android --app-version="4.0.0-${{ github.run_id}}"
-        echo "y" || lime test android
+        lime setup
+        lime config ANDROID_SETUP true
+        lime build android --app-version="4.0.0-${{ github.run_id }}"
+        lime test android
         
     - name: Upload game artifacts
       uses: actions/upload-artifact@v2
