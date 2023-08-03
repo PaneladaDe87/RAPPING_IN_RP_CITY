@@ -7,14 +7,15 @@ on:
   workflow_dispatch:
       
 jobs:
-  build:
+  build-android:
     runs-on: ubuntu-latest
+    
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       
     - name: Set up Haxe
-      uses: krdlab/setup-haxe@v1
+      uses: krdlab/setup-haxe@v1.5.1
       
     - name: Install dependencies
       run: |
@@ -27,12 +28,41 @@ jobs:
       # can someone explain?
       run: |
         haxelib run lime setup
-        echo "y" || lime config ANDROID_SETUP true
-        echo "y" || lime build android --app-version="4.0.0-${{ github.run_id }}"
-        echo "y" || lime test android
+        lime config ANDROID_SETUP true --non-interactive
+        lime build android --app-version="4.0.0-${{ github.run_id }}" --non-interactive
+        lime test android --non-interactive
         
     - name: Upload game artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
+      with:
+        name: Game
+        path: .
+    
+  build-windows:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set Up Haxe
+      uses: krdlab/setup-haxe@v1.5.1
+      
+    - name: Install dependencies
+      run: |
+        haxelib install lime
+        haxelib install flixel
+        haxelib install openfl
+        
+    - name: Setup and build this shitty game
+      # im tired
+      # bottom text
+      run: |
+        lime setup windows
+        lime build windows
+        
+    - name: Upload game artifacts
+      uses: actions/upload-artifacts@v3
       with:
         name: Game
         path: .

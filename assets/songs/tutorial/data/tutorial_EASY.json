@@ -1,0 +1,16 @@
+{
+    "song-name": "tutorial",
+    "song-voice-player1": "./assets/songs/tutorial/tracks/voices/vocalP1.ogg",
+    "song-voice-player2": "./assets/songs/tutorial/tracks/voices/vocalP2.ogg",
+    "song-instrumental": "./assets/songs/tutorial/tracks/instrumental/inst.ogg",
+    "song-bpm": 111,
+    "song-scroll-speed": 1.1,
+    "song-notes-player1": [
+        "0, 0, 0, 0",
+        "0, 0, 0, 0",
+        "0, 0, 0, 0",
+        "0, 0, 0, 0",
+        "0, 0, 0, 0",
+        "0, 0, 0, 0"
+    ]
+}

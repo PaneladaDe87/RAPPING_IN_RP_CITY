@@ -3,7 +3,7 @@ package;
 import flixel.FlxGame;
 import flixel.FlxState;
 
-public class IntroState extends FlxState {
+class IntroState extends FlxState {
     private var IntroEnded:Bool;
     private var CoolText:String = "CoolText";
     
@@ -12,7 +12,7 @@ public class IntroState extends FlxState {
     }
     
     public function create():Void {
-        Update();
+        update();
     }
     
     public function update(elapsed:Float):Void {

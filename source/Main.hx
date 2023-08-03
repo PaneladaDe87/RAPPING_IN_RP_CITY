@@ -1,9 +1,9 @@
 package;
 
 import flixel.FlxGame;
-import openfl.Assets;
+import lime.utils.Assets;
 
-public class Main extends FlxGame {
+class Main extends FlxGame {
     public static var DrawFrameRate:Bool;
     public static var FrameRate:Int;
     

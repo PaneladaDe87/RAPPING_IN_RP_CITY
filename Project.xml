@@ -2,8 +2,7 @@
 <project>
     <meta title="Rapping in Roleplay City" package="com.paneladade87.rapping" version="1.0.0" />
     <app main="Main" file="Main" />
-    <window width="800" height="600" resizeable="true" />
-    <window orientation="landscape" />
+    <window if="android" width="800" height="600" resizeable="true" orientation="landscape" />
     
     <haxelib name="flixel" />
     <haxelib name="openfl" />

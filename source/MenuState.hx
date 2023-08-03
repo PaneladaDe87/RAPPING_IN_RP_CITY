@@ -5,7 +5,7 @@ import flixel.FlxState;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
 
-public class MenuState extends FlxState {
+class MenuState extends FlxState {
     // Title sprites
     public var TitleSprite:FlxSprite = new FlxSprite();
     public var TitleOffsetX:Int;
@@ -51,6 +51,7 @@ public class MenuState extends FlxState {
     public static function checkSpaceKey(Pressed:Bool) {
         if(Pressed) {
             trace("FUCK YOU HAHA");
+            FlxGame.switchState(new PlayState());
         } else {
             trace("UNFUCK YOU HAHA");
         }
