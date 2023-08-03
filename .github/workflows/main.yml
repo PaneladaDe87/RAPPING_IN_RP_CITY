@@ -26,7 +26,7 @@ jobs:
       # lime, im trying to build my shitty game and you ignoring some lines?
       # can someone explain?
       run: |
-        lime setup
+        haxelib run lime setup
         lime config ANDROID_SETUP true
         lime build android --app-version="4.0.0-${{ github.run_id }}"
         lime test android
